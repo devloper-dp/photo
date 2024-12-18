@@ -1,0 +1,58 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const photographyEquipment = {
+  nodes: [
+    { id: "A", label: "Essential Equipment" },
+    { id: "B", label: "Lenses" },
+    { id: "C", label: "Tripods" },
+    { id: "D", label: "Filters" },
+    { id: "E", label: "Lighting" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Other Equipment (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={photographyEquipment} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Essential Accessories</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Lens systems (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Prime lenses</li>
+              <li>Zoom lenses</li>
+            </ul>
+          </li>
+          <li>Support equipment (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Tripods and monopods</li>
+              <li>Camera straps</li>
+            </ul>
+          </li>
+          <li>Filters and accessories (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>UV and polarizing filters</li>
+              <li>ND filters</li>
+            </ul>
+          </li>
+          <li>Storage and protection (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Camera bags</li>
+              <li>Memory cards</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

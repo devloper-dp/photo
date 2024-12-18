@@ -1,0 +1,52 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const compositionRules = {
+  nodes: [
+    { id: "A", label: "Composition Rules" },
+    { id: "B", label: "Rule of Thirds" },
+    { id: "C", label: "Leading Lines" },
+    { id: "D", label: "Symmetry" },
+    { id: "E", label: "Golden Ratio" },
+    { id: "F", label: "Balance" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Composition Techniques">
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Basic Composition Rules</h3>
+    <Flowchart data={compositionRules} />
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Camera Angles</h3>
+      <ul class="list-disc pl-6">
+        <li>Eye Level</li>
+        <li>High Angle</li>
+        <li>Low Angle</li>
+        <li>Bird's Eye View</li>
+        <li>Worm's Eye View</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Camera Movements</h3>
+      <ul class="list-disc pl-6">
+        <li>Pan</li>
+        <li>Tilt</li>
+        <li>Dolly</li>
+        <li>Zoom</li>
+        <li>Track</li>
+      </ul>
+    </div>
+  </div>
+</ContentSection>

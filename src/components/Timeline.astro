@@ -1,0 +1,30 @@
+---
+interface Props {
+  data: {
+    title: string;
+    events: Array<{
+      year: string;
+      event: string;
+    }>;
+  };
+}
+
+const { data } = Astro.props;
+
+// Generate Mermaid timeline syntax
+const generateTimelineSyntax = (data: Props['data']) => {
+  const eventDefinitions = data.events
+    .map(event => `${event.year} : ${event.event}`)
+    .join('\n      ');
+
+  return `timeline\n      title ${data.title}\n      ${eventDefinitions}`;
+};
+
+const timelineSyntax = generateTimelineSyntax(data);
+---
+
+<div class="my-6">
+  <pre class="mermaid">
+    {timelineSyntax}
+  </pre>
+</div>

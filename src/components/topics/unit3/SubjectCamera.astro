@@ -1,0 +1,77 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+
+const subjectCameraRelationship = {
+  nodes: [
+    { id: "A", label: "Subject-Camera Relationship" },
+    { id: "B", label: "Distance" },
+    { id: "C", label: "Perspective" },
+    { id: "D", label: "Movement" },
+    { id: "E", label: "Interaction" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+
+const markingScheme = [
+  {
+    title: "Distance and Perspective",
+    marks: 5,
+    details: [
+      "Subject distance effects",
+      "Perspective control",
+      "Spatial relationships"
+    ]
+  },
+  {
+    title: "Movement and Interaction",
+    marks: 5,
+    details: [
+      "Subject movement",
+      "Camera movement",
+      "Dynamic relationships"
+    ]
+  }
+];
+---
+
+<ContentSection title="Subject and Camera Relationship (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={subjectCameraRelationship} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Understanding the Relationship</h4>
+        <MarkingScheme items={markingScheme} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Key Concepts</h4>
+          <ul class="list-disc pl-6">
+            <li>Distance Effects:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Compression and expansion</li>
+                <li>Scale relationships</li>
+                <li>Spatial depth</li>
+              </ul>
+            </li>
+            <li>Movement Dynamics:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Subject tracking</li>
+                <li>Panning techniques</li>
+                <li>Motion effects</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

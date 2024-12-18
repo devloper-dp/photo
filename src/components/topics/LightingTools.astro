@@ -1,0 +1,75 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const lightingTools = {
+  nodes: [
+    { id: "A", label: "Lighting Tools" },
+    { id: "B", label: "Reflectors" },
+    { id: "C", label: "Diffusers" },
+    { id: "D", label: "Flags/Cutters" },
+    { id: "E", label: "Gels" },
+    { id: "F", label: "Grids" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Lighting Tools and Accessories">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Essential Lighting Tools</h3>
+      <Flowchart data={lightingTools} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Light Modifiers</h4>
+          <ul class="list-disc pl-6">
+            <li>Reflectors:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Silver - Bright, specular reflection</li>
+                <li>Gold - Warm reflection</li>
+                <li>White - Soft fill light</li>
+                <li>Black - Subtract light</li>
+              </ul>
+            </li>
+            <li>Diffusers:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Softboxes</li>
+                <li>Umbrellas</li>
+                <li>Scrims</li>
+                <li>Beauty dishes</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Control Tools</h4>
+          <ul class="list-disc pl-6">
+            <li>Flags and Cutters:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Block unwanted light</li>
+                <li>Create shadows</li>
+                <li>Control spill</li>
+              </ul>
+            </li>
+            <li>Color Modification:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Color correction gels</li>
+                <li>Creative color gels</li>
+                <li>Neutral density filters</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

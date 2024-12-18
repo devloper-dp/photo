@@ -1,0 +1,79 @@
+---
+import ImageAdjustments from '../../ImageAdjustments.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+
+const adjustmentTools = {
+  nodes: [
+    { id: "A", label: "Image Adjustments" },
+    { id: "B", label: "Brightness/Contrast" },
+    { id: "C", label: "Levels" },
+    { id: "D", label: "Curves" },
+    { id: "E", label: "Color Balance" },
+    { id: "F", label: "Selective Edits" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+
+const markingScheme = [
+  {
+    title: "Basic Adjustments",
+    marks: 5,
+    details: [
+      "Brightness and contrast",
+      "Color correction",
+      "Tonal adjustments"
+    ]
+  },
+  {
+    title: "Advanced Techniques",
+    marks: 5,
+    details: [
+      "Levels and curves",
+      "Selective editing",
+      "Color grading"
+    ]
+  }
+];
+---
+
+<Fragment title="Image Adjustments and Color Correction (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={adjustmentTools} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Adjustment Techniques</h4>
+        <MarkingScheme items={markingScheme} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Common Adjustments</h4>
+          <ul class="list-disc pl-6">
+            <li>Tonal Adjustments:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Shadows and highlights</li>
+                <li>Midtone control</li>
+                <li>Contrast enhancement</li>
+              </ul>
+            </li>
+            <li>Color Corrections:
+              <ul class="list-circle pl-6 mt-1">
+                <li>White balance</li>
+                <li>Color grading</li>
+                <li>Selective color</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Fragment>

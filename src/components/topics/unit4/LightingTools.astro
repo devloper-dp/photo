@@ -1,0 +1,42 @@
+---
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { lightingToolsData } from '../../../data/lighting';
+import { lightingToolsMarks } from '../../../data/marking-schemes/lighting';
+
+---
+
+<ContentSection title="Lighting Tools and Accessories (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={lightingToolsData} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Essential Tools</h4>
+        <MarkingScheme items={lightingToolsMarks} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Common Modifiers</h4>
+          <ul class="list-disc pl-6">
+            <li>Reflectors:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Silver - Specular reflection</li>
+                <li>Gold - Warm reflection</li>
+                <li>White - Soft fill</li>
+              </ul>
+            </li>
+            <li>Diffusers:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Softboxes</li>
+                <li>Umbrellas</li>
+                <li>Scrims</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

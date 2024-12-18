@@ -1,0 +1,32 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Timeline from '../../Timeline.astro';
+
+const historyTimeline = {
+  title: "History of Photography",
+  events: [
+    { year: "1826", event: "First Permanent Photograph" },
+    { year: "1839", event: "Daguerreotype Process" },
+    { year: "1888", event: "First Kodak Camera" },
+    { year: "1925", event: "First 35mm Leica" },
+    { year: "1975", event: "First Digital Camera" }
+  ]
+};
+---
+
+<ContentSection title="History of Photography (20 Marks)">
+  <div class="space-y-6">
+    <Timeline data={historyTimeline} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Key Developments</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Camera Obscura Era (5 marks)</li>
+          <li>Chemical Photography (5 marks)</li>
+          <li>Film Development (5 marks)</li>
+          <li>Digital Revolution (5 marks)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

@@ -1,0 +1,58 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const cameraFunctions = {
+  nodes: [
+    { id: "A", label: "Camera Functions" },
+    { id: "B", label: "Exposure Control" },
+    { id: "C", label: "Focus System" },
+    { id: "D", label: "Image Processing" },
+    { id: "E", label: "Storage Management" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Parts of Camera Functions (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={cameraFunctions} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Core Functions</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Exposure mechanisms (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Aperture control</li>
+              <li>Shutter timing</li>
+            </ul>
+          </li>
+          <li>Focus systems (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Autofocus modes</li>
+              <li>Manual focus aids</li>
+            </ul>
+          </li>
+          <li>Image processing (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Color processing</li>
+              <li>Noise reduction</li>
+            </ul>
+          </li>
+          <li>Storage functions (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>File formats</li>
+              <li>Memory management</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

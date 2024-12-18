@@ -1,0 +1,19 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { modernTrendsData, trendMarkingScheme } from '../../../data/current-trends';
+---
+
+<ContentSection title="Current Trends in Technology and Style (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={modernTrendsData} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Modern Photography Trends</h4>
+        <MarkingScheme items={trendMarkingScheme} />
+      </div>
+    </div>
+  </div>
+</ContentSection>

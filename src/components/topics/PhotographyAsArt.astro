@@ -1,0 +1,67 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const artMovements = {
+  nodes: [
+    { id: "A", label: "Photography Movements" },
+    { id: "B", label: "Pictorialism" },
+    { id: "C", label: "Straight Photography" },
+    { id: "D", label: "Documentary" },
+    { id: "E", label: "Modern Art" },
+    { id: "F", label: "Contemporary" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" },
+    { from: "E", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Photography as Art">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">The Artistic Journey</h3>
+      <p class="mb-4">
+        Photography's recognition as an art form was a gradual process. Initially viewed merely as a mechanical reproduction tool, it evolved through various artistic movements and styles to become a respected medium of creative expression.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Major Artistic Movements</h3>
+      <Flowchart data={artMovements} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Pictorialism (1890s-1910s)</h4>
+          <ul class="list-disc pl-6">
+            <li>Emphasized beauty and composition over pure documentation</li>
+            <li>Used soft focus and manipulation techniques</li>
+            <li>Aimed to emulate painting styles</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Straight Photography (1910s-1930s)</h4>
+          <ul class="list-disc pl-6">
+            <li>Focused on sharp, clearly defined images</li>
+            <li>Emphasized photography's unique qualities</li>
+            <li>Led by photographers like Paul Strand and Edward Weston</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Modern Photography</h4>
+          <ul class="list-disc pl-6">
+            <li>Experimental techniques and abstract compositions</li>
+            <li>Integration with other art movements</li>
+            <li>Focus on form, pattern, and texture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

@@ -1,0 +1,37 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const technicalAspects = {
+  nodes: [
+    { id: "A", label: "Technical Aspects" },
+    { id: "B", label: "Depth of Field" },
+    { id: "C", label: "Aperture/Shutter" },
+    { id: "D", label: "Lenses" },
+    { id: "E", label: "Composition" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Technical Aspects (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={technicalAspects} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Core Concepts</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Depth of Field Control (5 marks)</li>
+          <li>Exposure Settings (5 marks)</li>
+          <li>Lens Selection (5 marks)</li>
+          <li>Composition Rules (5 marks)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

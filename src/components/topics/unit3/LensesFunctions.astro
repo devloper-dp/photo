@@ -1,0 +1,21 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { lensesData } from '../../../data/technical-aspects';
+import { lensesMarks } from '../../../data/marking-schemes/technical';
+
+---
+
+<ContentSection title="Lenses and Functions (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={lensesData} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Lens Types and Applications</h4>
+        <MarkingScheme items={lensesMarks} />
+      </div>
+    </div>
+  </div>
+</ContentSection>

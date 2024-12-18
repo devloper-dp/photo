@@ -1,0 +1,137 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const editingWorkflow = {
+  nodes: [
+    { id: "A", label: "Editing Workflow" },
+    { id: "B", label: "Basic Adjustments" },
+    { id: "C", label: "Color Correction" },
+    { id: "D", label: "Local Adjustments" },
+    { id: "E", label: "Effects/Filters" },
+    { id: "F", label: "Output/Export" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" },
+    { from: "E", to: "F" }
+  ]
+};
+
+const adjustmentTools = {
+  nodes: [
+    { id: "A", label: "Adjustment Tools" },
+    { id: "B", label: "Levels" },
+    { id: "C", label: "Curves" },
+    { id: "D", label: "HSL" },
+    { id: "E", label: "Selective Color" },
+    { id: "F", label: "Masks" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Image Editing">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Digital Editing Process</h3>
+      <Flowchart data={editingWorkflow} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Basic Adjustments</h4>
+          <ul class="list-disc pl-6">
+            <li>Exposure:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Brightness control</li>
+                <li>Shadow recovery</li>
+                <li>Highlight protection</li>
+              </ul>
+            </li>
+            <li>Contrast:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Tonal range adjustment</li>
+                <li>Black point setting</li>
+                <li>White point setting</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Color Correction</h4>
+          <ul class="list-disc pl-6">
+            <li>White Balance:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Temperature adjustment</li>
+                <li>Tint correction</li>
+              </ul>
+            </li>
+            <li>Color Enhancement:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Saturation control</li>
+                <li>Vibrance adjustment</li>
+                <li>Selective color editing</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Advanced Editing Tools</h3>
+      <Flowchart data={adjustmentTools} />
+      
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Professional Tools</h4>
+          <ul class="list-disc pl-6">
+            <li>Levels and Curves:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Precise tonal control</li>
+                <li>Channel-specific adjustments</li>
+                <li>Custom tone curves</li>
+              </ul>
+            </li>
+            <li>Local Adjustments:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Selective editing</li>
+                <li>Masking techniques</li>
+                <li>Gradient filters</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Creative Effects</h4>
+          <ul class="list-disc pl-6">
+            <li>Artistic Filters:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Black and white conversion</li>
+                <li>Split toning</li>
+                <li>Film simulation</li>
+              </ul>
+            </li>
+            <li>Finishing Touches:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Sharpening</li>
+                <li>Noise reduction</li>
+                <li>Vignetting</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

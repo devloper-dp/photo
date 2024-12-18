@@ -1,0 +1,21 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { depthOfFieldData } from '../../../data/technical-aspects';
+import { depthOfFieldMarks } from '../../../data/marking-schemes/technical';
+
+---
+
+<ContentSection title="Depth of Field (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={depthOfFieldData} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Understanding Depth of Field</h4>
+        <MarkingScheme items={depthOfFieldMarks} />
+      </div>
+    </div>
+  </div>
+</ContentSection>

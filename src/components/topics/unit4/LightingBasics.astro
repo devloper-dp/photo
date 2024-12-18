@@ -1,0 +1,37 @@
+---
+import Flowchart from '../../Flowchart.astro';
+import ContentSection from '../ContentSection.astro';
+
+const lightingConcepts = {
+  nodes: [
+    { id: "A", label: "Lighting" },
+    { id: "B", label: "Properties" },
+    { id: "C", label: "Types" },
+    { id: "D", label: "Tools" },
+    { id: "E", label: "Techniques" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Lighting Fundamentals (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={lightingConcepts} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Lighting Elements</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Light Properties (5 marks)</li>
+          <li>Light Types (5 marks)</li>
+          <li>Lighting Tools (5 marks)</li>
+          <li>Basic Techniques (5 marks)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

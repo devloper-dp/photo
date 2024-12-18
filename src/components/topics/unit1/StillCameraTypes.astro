@@ -1,0 +1,38 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const cameraTypes = {
+  nodes: [
+    { id: "A", label: "Still Camera Types" },
+    { id: "B", label: "DSLR" },
+    { id: "C", label: "Mirrorless" },
+    { id: "D", label: "Point & Shoot" },
+    { id: "E", label: "Medium Format" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Types of Still Camera (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={cameraTypes} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Camera Categories</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>DSLR cameras (5 marks)</li>
+          <li>Mirrorless systems (5 marks)</li>
+          <li>Point & shoot cameras (5 marks)</li>
+          <li>Medium format systems (5 marks)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

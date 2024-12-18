@@ -1,0 +1,58 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const cameraParts = {
+  nodes: [
+    { id: "A", label: "Camera Body" },
+    { id: "B", label: "Lens Mount" },
+    { id: "C", label: "Viewfinder" },
+    { id: "D", label: "Image Sensor" },
+    { id: "E", label: "Controls" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Parts of a Still Camera (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={cameraParts} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Essential Components</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Body and chassis (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Construction materials</li>
+              <li>Weather sealing</li>
+            </ul>
+          </li>
+          <li>Optical system (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Lens mount types</li>
+              <li>Mirror mechanism (DSLR)</li>
+            </ul>
+          </li>
+          <li>Electronic components (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Sensor types</li>
+              <li>Processing units</li>
+            </ul>
+          </li>
+          <li>Interface elements (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Controls and dials</li>
+              <li>Display screens</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

@@ -1,0 +1,31 @@
+---
+import type { FlowchartData } from '../../types/flowchart';
+
+interface Props {
+  data: FlowchartData;
+  title?: string;
+}
+
+const { data, title } = Astro.props;
+
+const generateMermaidSyntax = (data: FlowchartData) => {
+  const nodeDefinitions = data.nodes
+    .map(node => `${node.id}[${node.label}]`)
+    .join('\n    ');
+  
+  const connectionDefinitions = data.connections
+    .map(conn => `${conn.from} --> ${conn.to}`)
+    .join('\n    ');
+
+  return `graph TD\n    ${nodeDefinitions}\n    ${connectionDefinitions}`;
+};
+
+const flowchartSyntax = generateMermaidSyntax(data);
+---
+
+<div class="my-6">
+  {title && <h3 class="text-xl font-semibold mb-4">{title}</h3>}
+  <pre class="mermaid">
+    {flowchartSyntax}
+  </pre>
+</div>

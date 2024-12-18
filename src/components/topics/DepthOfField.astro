@@ -1,0 +1,70 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const dofFactors = {
+  nodes: [
+    { id: "A", label: "Depth of Field Factors" },
+    { id: "B", label: "Aperture Size" },
+    { id: "C", label: "Focal Length" },
+    { id: "D", label: "Subject Distance" },
+    { id: "E", label: "Sensor Size" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Depth of Field">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Understanding Depth of Field</h3>
+      <p class="mb-4">
+        Depth of field (DOF) refers to the range of distance in which objects appear acceptably sharp in an image. It's a crucial concept in photography that affects the aesthetic and visual impact of your images.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Key Factors Affecting DOF</h3>
+      <Flowchart data={dofFactors} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Aperture Size (f-stop)</h4>
+          <ul class="list-disc pl-6">
+            <li>Larger aperture (smaller f-number) = Shallower DOF</li>
+            <li>Smaller aperture (larger f-number) = Greater DOF</li>
+            <li>Common uses:
+              <ul class="list-circle pl-6 mt-1">
+                <li>f/1.4 - f/2.8: Portraits, isolating subjects</li>
+                <li>f/8 - f/16: Landscapes, architecture</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Focal Length Impact</h4>
+          <ul class="list-disc pl-6">
+            <li>Longer focal lengths create shallower DOF</li>
+            <li>Wider angles provide greater DOF</li>
+            <li>Affects perspective compression</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Subject Distance</h4>
+          <ul class="list-disc pl-6">
+            <li>Closer subjects = Shallower DOF</li>
+            <li>Further subjects = Greater DOF</li>
+            <li>Critical for macro photography</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

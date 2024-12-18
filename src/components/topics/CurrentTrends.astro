@@ -1,0 +1,75 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const modernTrends = {
+  nodes: [
+    { id: "A", label: "Current Trends" },
+    { id: "B", label: "Computational Photography" },
+    { id: "C", label: "AI Enhancement" },
+    { id: "D", label: "Mobile Photography" },
+    { id: "E", label: "Virtual Reality" },
+    { id: "F", label: "Drone Photography" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Current Trends in Photography">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Modern Photography Trends</h3>
+      <Flowchart data={modernTrends} />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Technological Innovations</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Computational Photography:</strong>
+            <ul class="list-circle pl-6 mt-1">
+              <li>HDR imaging</li>
+              <li>Night mode photography</li>
+              <li>Portrait mode effects</li>
+              <li>Focus stacking</li>
+            </ul>
+          </li>
+          <li><strong>AI-Enhanced Imaging:</strong>
+            <ul class="list-circle pl-6 mt-1">
+              <li>Automatic scene optimization</li>
+              <li>Subject detection and tracking</li>
+              <li>Style transfer</li>
+              <li>Noise reduction</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-medium mb-2">Creative Trends</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Social Media Influence:</strong>
+            <ul class="list-circle pl-6 mt-1">
+              <li>Vertical photography</li>
+              <li>Story-focused content</li>
+              <li>Instant sharing</li>
+            </ul>
+          </li>
+          <li><strong>New Perspectives:</strong>
+            <ul class="list-circle pl-6 mt-1">
+              <li>Drone photography</li>
+              <li>360-degree imaging</li>
+              <li>Virtual reality integration</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

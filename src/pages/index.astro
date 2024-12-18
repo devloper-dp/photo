@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/ui/Card.astro';
+import ContentHeader from '../components/ui/ContentHeader.astro';
+
+const units = [
+  {
+    title: "Unit I: Camera Basics",
+    description: "History of Photography, Camera Types, and Equipment",
+    href: "/unit1",
+    sections: [
+      "# UNIT I",
+      "## History of Photography",
+      "- **Introduction to Camera**: Overview of how cameras work and their significance in capturing images.",
+      "- **Types of a Still Camera**: Discussion on various types of still cameras (DSLR, mirrorless, compact, etc.) and their features.",
+      "- **Part of a Still Camera**: Breakdown of the main components of a still camera (lens, body, viewfinder, etc.).",
+      "- **Parts of Camera Functions**: Explanation of how different parts of the camera contribute to its functionality.",
+      "- **Other Equipment**: Overview of additional photography equipment (tripods, filters, etc.) that enhances the photography experience."
+    ]
+  },
+  {
+    title: "Unit II: Evolution of Photography",
+    description: "From Early Cameras to Digital Era",
+    href: "/unit2",
+    sections: [
+      "# UNIT II",
+      "## Origin of Photography",
+      "- **Early Cameras and Technology**: Historical context of the first cameras and their technology.",
+      "- **Photography as Art**: Exploration of photography as a form of artistic expression.",
+      "- **Evolution of Camera – From Film to Digital Era**: Transition from film photography to digital photography and its impact.",
+      "- **History of Different Genres of Photography**: Overview of various photography genres (portrait, landscape, documentary, etc.).",
+      "- **Current Trends in Technology and Style**: Discussion on contemporary trends in photography technology and styles."
+    ]
+  },
+  {
+    title: "Unit III: Technical Aspects",
+    description: "Depth of Field, Aperture, and Composition",
+    href: "/unit3",
+    sections: [
+      "# UNIT III",
+      "## Technical Aspects",
+      "- **Depth of Field**: Explanation of depth of field and its importance in photography.",
+      "- **Aperture**: Understanding aperture settings and their effects on exposure and depth of field.",
+      "- **Shutter Speed**: Overview of shutter speed and its role in motion capture and exposure.",
+      "- **Lenses and Functions**: Discussion on different types of lenses and their specific functions.",
+      "- **Composition – Different Types of Shots**: Guide to composition techniques and various shot types.",
+      "- **Camera Angle and Camera Movements**: Exploration of how camera angles and movements affect storytelling.",
+      "- **Subject and Camera Relationship**: Understanding the relationship between the subject and the camera."
+    ]
+  },
+  {
+    title: "Unit IV: Lighting",
+    description: "Light Properties and Techniques",
+    href: "/unit4",
+    sections: [
+      "# UNIT IV",
+      "## Lighting",
+      "- **Lights and Its Properties**: Overview of light properties and their effects on photography.",
+      "- **Different Types of Lights**: Discussion on natural and artificial lighting sources.",
+      "- **Other Tools Used in Lighting**: Explanation of tools like reflectors, cutters, and gels used in lighting setups.",
+      "- **Basic Lighting Techniques and Accessories**: Introduction to fundamental lighting techniques and accessories."
+    ]
+  },
+  {
+    title: "Unit V: Digital Processing",
+    description: "Scanning and Image Editing",
+    href: "/unit5",
+    sections: [
+      "# UNIT V",
+      "## Scanning and Image Editing",
+      "- **Scanning: Scanners as Input Devices**: Overview of scanners and their working principles.",
+      "- **Scanning Procedure and Resolution**: Explanation of the scanning process and importance of resolution.",
+      "- **Image Editing Through Software**: Guide to using software like Adobe Photoshop for image editing.",
+      "- **Adjustment of Brightness, Contrast, Tonal and Color Values**: Techniques for adjusting image properties.",
+      "- **Experimenting with Level and Curve**: Overview of advanced editing techniques using levels and curves."
+    ]
+  }
+];
+---
+
+<Layout title="Photography Course">
+  <div class="max-w-4xl mx-auto">
+    <ContentHeader 
+      title="Photography Education"
+      description="Master the art and science of photography through our comprehensive course modules."
+    />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {units.map(unit => (
+        <Card {...unit}>
+          {unit.sections.map(section => (
+            <p>{section}</p>
+          ))}
+        </Card>
+      ))}
+    </div>
+  </div>
+</Layout>

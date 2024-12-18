@@ -1,0 +1,46 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import FlowchartDiagram from '../../diagrams/FlowchartDiagram.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { cameraAnglesDiagram } from '../../../data/diagrams/unit3/camera-angles';
+import { cameraAnglesMarkingScheme } from '../../../data/marking-schemes/unit3';
+
+---
+
+<ContentSection title="Camera Angles and Movements (10 Marks)">
+  <div class="space-y-6">
+    <FlowchartDiagram 
+      data={cameraAnglesDiagram} 
+      title="Camera Angles Overview"
+    />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Camera Techniques</h4>
+        <MarkingScheme items={cameraAnglesMarkingScheme.items} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Practical Applications</h4>
+          <ul class="list-disc pl-6">
+            <li>Storytelling Impact:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Character perspective</li>
+                <li>Emotional impact</li>
+                <li>Narrative enhancement</li>
+              </ul>
+            </li>
+            <li>Technical Execution:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Equipment requirements</li>
+                <li>Movement coordination</li>
+                <li>Stabilization techniques</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

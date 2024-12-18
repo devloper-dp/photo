@@ -1,0 +1,39 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { apertureShutterMarks } from '../../../data/marking-schemes/technical';
+
+---
+
+<ContentSection title="Aperture and Shutter Speed (10 Marks)">
+  <div class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Exposure Controls</h4>
+        <MarkingScheme items={apertureShutterMarks} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Common Settings</h4>
+          <ul class="list-disc pl-6">
+            <li>Aperture Values:
+              <ul class="list-circle pl-6 mt-1">
+                <li>f/1.4 - Very shallow DOF</li>
+                <li>f/5.6 - Medium DOF</li>
+                <li>f/16 - Deep DOF</li>
+              </ul>
+            </li>
+            <li>Shutter Speeds:
+              <ul class="list-circle pl-6 mt-1">
+                <li>1/1000s - Fast action</li>
+                <li>1/60s - Handheld</li>
+                <li>1s+ - Long exposure</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

@@ -1,0 +1,79 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+
+const scanningWorkflow = {
+  nodes: [
+    { id: "A", label: "Scanning Process" },
+    { id: "B", label: "Document Prep" },
+    { id: "C", label: "Preview Scan" },
+    { id: "D", label: "Settings Adjustment" },
+    { id: "E", label: "Final Scan" },
+    { id: "F", label: "Save/Export" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" },
+    { from: "E", to: "F" }
+  ]
+};
+
+const markingScheme = [
+  {
+    title: "Scanner Operation",
+    marks: 5,
+    details: [
+      "Scanner types and functions",
+      "Resolution settings",
+      "Color modes"
+    ]
+  },
+  {
+    title: "Scanning Workflow",
+    marks: 5,
+    details: [
+      "Document preparation",
+      "Preview and adjustment",
+      "Final scan process"
+    ]
+  }
+];
+---
+
+<Fragment title="Scanning Procedure and Resolution (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={scanningWorkflow} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Scanning Process</h4>
+        <MarkingScheme items={markingScheme} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Resolution Guidelines</h4>
+          <ul class="list-disc pl-6">
+            <li>Document Types:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Text: 300 DPI</li>
+                <li>Photos: 600 DPI</li>
+                <li>Film: 2400+ DPI</li>
+              </ul>
+            </li>
+            <li>Output Considerations:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Print requirements</li>
+                <li>Digital display</li>
+                <li>Archive quality</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Fragment>

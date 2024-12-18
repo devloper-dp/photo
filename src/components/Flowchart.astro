@@ -1,0 +1,37 @@
+---
+interface Props {
+  data: {
+    nodes: Array<{
+      id: string;
+      label: string;
+    }>;
+    connections: Array<{
+      from: string;
+      to: string;
+    }>;
+  };
+}
+
+const { data } = Astro.props;
+
+// Generate Mermaid flowchart syntax
+const generateFlowchartSyntax = (data: Props['data']) => {
+  const nodeDefinitions = data.nodes
+    .map(node => `${node.id}[${node.label}]`)
+    .join('\n      ');
+  
+  const connectionDefinitions = data.connections
+    .map(conn => `${conn.from} --> ${conn.to}`)
+    .join('\n      ');
+
+  return `graph TD\n      ${nodeDefinitions}\n      ${connectionDefinitions}`;
+};
+
+const flowchartSyntax = generateFlowchartSyntax(data);
+---
+
+<div class="my-6">
+  <pre class="mermaid">
+    {flowchartSyntax}
+  </pre>
+</div>

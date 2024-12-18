@@ -1,0 +1,17 @@
+---
+interface Props {
+  unit: string;
+  title: string;
+  description?: string;
+}
+
+const { unit, title, description } = Astro.props;
+---
+
+<div class="mb-12">
+  <div class="mb-2">
+    <span class="text-sm font-medium text-indigo-600">Unit {unit}</span>
+  </div>
+  <h1 class="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
+  {description && <p class="text-xl text-gray-600">{description}</p>}
+</div>

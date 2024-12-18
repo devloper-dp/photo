@@ -1,0 +1,43 @@
+---
+import  from '../../.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { lightTypesData } from '../../../data/lighting';
+import { lightTypesMarks } from '../../../data/marking-schemes/lighting';
+
+---
+
+< title="Types of Light (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={lightTypesData} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Light Sources</h4>
+        <MarkingScheme items={lightTypesMarks} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Common Applications</h4>
+          <ul class="list-disc pl-6">
+            <li>Natural Light:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Landscape photography</li>
+                <li>Environmental portraits</li>
+                <li>Architecture</li>
+              </ul>
+            </li>
+            <li>Artificial Light:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Studio portraits</li>
+                <li>Product photography</li>
+                <li>Event photography</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</>

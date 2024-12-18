@@ -1,0 +1,36 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const cameraBasics = {
+  nodes: [
+    { id: "A", label: "Camera Fundamentals" },
+    { id: "B", label: "Light Capture" },
+    { id: "C", label: "Image Formation" },
+    { id: "D", label: "Storage" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" }
+  ]
+};
+---
+
+<ContentSection title="Introduction to Camera (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={cameraBasics} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Basic Principles</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Light and optics (5 marks)</li>
+          <li>Image sensor technology (5 marks)</li>
+          <li>Camera mechanics (5 marks)</li>
+          <li>Digital processing (5 marks)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

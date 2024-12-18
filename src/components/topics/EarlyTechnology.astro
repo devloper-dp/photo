@@ -1,0 +1,64 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Timeline from '../Timeline.astro';
+import Flowchart from '../Flowchart.astro';
+
+const earlyTechTimeline = {
+  title: "Early Camera Technology",
+  events: [
+    { year: "1000", event: "First Camera Obscura descriptions by Alhazen" },
+    { year: "1544", event: "First detailed published description of a pinhole camera" },
+    { year: "1685", event: "Portable Camera Obscura box developed" },
+    { year: "1822", event: "Niepce begins experiments with light-sensitive materials" },
+    { year: "1835", event: "First paper negative process by Talbot" },
+    { year: "1861", event: "First color photograph demonstrated by Maxwell" }
+  ]
+};
+
+const earlyProcesses = {
+  nodes: [
+    { id: "A", label: "Early Processes" },
+    { id: "B", label: "Camera Obscura" },
+    { id: "C", label: "Heliography" },
+    { id: "D", label: "Daguerreotype" },
+    { id: "E", label: "Calotype" },
+    { id: "F", label: "Wet Plate" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" },
+    { from: "E", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Early Cameras and Technology">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">The Camera Obscura Era</h3>
+      <p class="mb-4">
+        The camera obscura, meaning "dark chamber" in Latin, was the foundation of photographic technology. Initially, it was a room-sized device used by artists and scientists to study optics and create accurate drawings. The basic principle involved light passing through a small hole into a darkened room, projecting an inverted image of the outside scene.
+      </p>
+    </div>
+
+    <Timeline data={earlyTechTimeline} />
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Early Photographic Processes</h3>
+      <Flowchart data={earlyProcesses} />
+      
+      <div class="mt-4 space-y-2">
+        <p><strong>Technical Innovations:</strong></p>
+        <ul class="list-disc pl-6">
+          <li>Development of light-sensitive materials (silver salts)</li>
+          <li>Introduction of fixing agents to make images permanent</li>
+          <li>Creation of glass plate negatives</li>
+          <li>Improvement in lens design and quality</li>
+          <li>Reduction in exposure times from hours to seconds</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

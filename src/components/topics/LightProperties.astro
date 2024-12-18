@@ -1,0 +1,75 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const lightCharacteristics = {
+  nodes: [
+    { id: "A", label: "Light Properties" },
+    { id: "B", label: "Intensity" },
+    { id: "C", label: "Quality" },
+    { id: "D", label: "Direction" },
+    { id: "E", label: "Color Temperature" },
+    { id: "F", label: "Contrast" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Light Properties">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Understanding Light</h3>
+      <p class="mb-4">
+        Light is the foundation of photography. Understanding its properties and behavior is crucial for creating compelling images.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Key Properties of Light</h3>
+      <Flowchart data={lightCharacteristics} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Quality of Light</h4>
+          <ul class="list-disc pl-6">
+            <li>Hard Light:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Sharp, defined shadows</li>
+                <li>High contrast</li>
+                <li>Strong textures</li>
+              </ul>
+            </li>
+            <li>Soft Light:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Diffused shadows</li>
+                <li>Lower contrast</li>
+                <li>Smoother transitions</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Color Temperature</h4>
+          <ul class="list-disc pl-6">
+            <li>Measured in Kelvin (K)</li>
+            <li>Common temperatures:
+              <ul class="list-circle pl-6 mt-1">
+                <li>2700K - Warm (tungsten)</li>
+                <li>5500K - Daylight</li>
+                <li>6500K - Overcast sky</li>
+                <li>9000K - Blue sky</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

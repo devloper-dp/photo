@@ -1,0 +1,55 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const lightingTypes = {
+  nodes: [
+    { id: "A", label: "Types of Lights" },
+    { id: "B", label: "Natural Light" },
+    { id: "C", label: "Continuous Light" },
+    { id: "D", label: "Strobe/Flash" },
+    { id: "E", label: "LED Panels" },
+    { id: "F", label: "Specialty Lights" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Types of Lighting">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Different Light Sources</h3>
+      <Flowchart data={lightingTypes} />
+      
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Natural Light Sources</h4>
+          <ul class="list-disc pl-6">
+            <li>Direct sunlight</li>
+            <li>Diffused daylight</li>
+            <li>Golden hour light</li>
+            <li>Reflected sunlight</li>
+            <li>Moonlight</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Artificial Light Sources</h4>
+          <ul class="list-disc pl-6">
+            <li>Studio strobes</li>
+            <li>Speedlights</li>
+            <li>LED panels</li>
+            <li>Tungsten lights</li>
+            <li>Fluorescent lights</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentSection>

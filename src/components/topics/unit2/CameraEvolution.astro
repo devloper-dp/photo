@@ -1,0 +1,53 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Timeline from '../../Timeline.astro';
+
+const cameraEvolution = {
+  title: "Camera Evolution Timeline",
+  events: [
+    { year: "1888", event: "First Kodak camera" },
+    { year: "1925", event: "First 35mm Leica" },
+    { year: "1948", event: "First Polaroid camera" },
+    { year: "1975", event: "First digital camera prototype" },
+    { year: "1991", event: "First professional DSLR" }
+  ]
+};
+---
+
+<ContentSection title="Evolution of Camera – From Film to Digital Era (20 Marks)">
+  <div class="space-y-6">
+    <Timeline data={cameraEvolution} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Technological Evolution</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Film era developments (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Roll film innovation</li>
+              <li>35mm format</li>
+            </ul>
+          </li>
+          <li>Instant photography (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Polaroid technology</li>
+              <li>Instant film systems</li>
+            </ul>
+          </li>
+          <li>Digital revolution (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Early digital cameras</li>
+              <li>Sensor development</li>
+            </ul>
+          </li>
+          <li>Modern capabilities (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Advanced features</li>
+              <li>Computational photography</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

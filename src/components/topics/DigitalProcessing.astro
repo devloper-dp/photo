@@ -1,0 +1,52 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const workflowSteps = {
+  nodes: [
+    { id: "A", label: "Digital Workflow" },
+    { id: "B", label: "Import" },
+    { id: "C", label: "Organization" },
+    { id: "D", label: "Basic Edits" },
+    { id: "E", label: "Advanced Edits" },
+    { id: "F", label: "Export" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" },
+    { from: "E", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Digital Processing">
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Digital Workflow</h3>
+    <Flowchart data={workflowSteps} />
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Basic Adjustments</h3>
+      <ul class="list-disc pl-6">
+        <li>Exposure Correction</li>
+        <li>White Balance</li>
+        <li>Contrast</li>
+        <li>Saturation</li>
+        <li>Sharpening</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Advanced Techniques</h3>
+      <ul class="list-disc pl-6">
+        <li>Local Adjustments</li>
+        <li>Color Grading</li>
+        <li>Retouching</li>
+        <li>HDR Processing</li>
+        <li>Black & White Conversion</li>
+      </ul>
+    </div>
+  </div>
+</ContentSection>

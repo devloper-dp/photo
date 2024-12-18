@@ -1,0 +1,58 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Flowchart from '../../Flowchart.astro';
+
+const artMovements = {
+  nodes: [
+    { id: "A", label: "Photography as Art" },
+    { id: "B", label: "Pictorialism" },
+    { id: "C", label: "Modernism" },
+    { id: "D", label: "Documentary" },
+    { id: "E", label: "Contemporary" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Photography as Art (20 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={artMovements} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Artistic Development</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Early artistic recognition (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Acceptance as art form</li>
+              <li>Early pioneers</li>
+            </ul>
+          </li>
+          <li>Major movements (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Pictorialism</li>
+              <li>Modernist photography</li>
+            </ul>
+          </li>
+          <li>Artistic techniques (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Composition principles</li>
+              <li>Creative expression</li>
+            </ul>
+          </li>
+          <li>Contemporary impact (5 marks):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Digital art photography</li>
+              <li>Modern movements</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

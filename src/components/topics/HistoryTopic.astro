@@ -1,0 +1,174 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Timeline from '../Timeline.astro';
+import Flowchart from '../Flowchart.astro';
+
+const historyTimeline = {
+  title: "History of Photography",
+  events: [
+    { year: "1826", event: "First Permanent Photograph by Nicéphore Niépce" },
+    { year: "1839", event: "Daguerreotype Process Introduced" },
+    { year: "1851", event: "Collodion Wet Plate Process" },
+    { year: "1878", event: "First Motion Study Photographs" },
+    { year: "1888", event: "First Kodak Camera" },
+    { year: "1901", event: "First Kodak Brownie Camera" },
+    { year: "1925", event: "First 35mm Leica Camera" },
+    { year: "1947", event: "Invention of Instant Photography (Polaroid)" },
+    { year: "1975", event: "First Digital Camera by Kodak" },
+    { year: "1991", event: "First Professional Digital SLR" }
+  ]
+};
+
+const photographyDevelopment = {
+  nodes: [
+    { id: "A", label: "Photography Evolution" },
+    { id: "B", label: "Camera Obscura" },
+    { id: "C", label: "Chemical Process" },
+    { id: "D", label: "Film Photography" },
+    { id: "E", label: "Digital Revolution" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="History of Photography">
+  <div class="space-y-8">
+    <div>
+      <h3 class="text-2xl font-semibold mb-4">The Birth and Evolution of Photography</h3>
+      <p class="mb-4">
+        Photography, derived from the Greek words "photos" (light) and "graphein" (to draw), is the art and science of creating images using light. The history of photography spans nearly two centuries of technical and artistic development.
+      </p>
+      
+      <div class="mb-6">
+        <h4 class="text-xl font-semibold mb-2">Pre-Photography Era</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Camera Obscura (Ancient Times):
+            <ul class="list-circle pl-6 mt-1">
+              <li>Natural optical phenomenon</li>
+              <li>Used by artists for drawing aid</li>
+              <li>Basic principle of modern cameras</li>
+            </ul>
+          </li>
+          <li>Early Chemical Experiments:
+            <ul class="list-circle pl-6 mt-1">
+              <li>Silver nitrate light sensitivity (1724)</li>
+              <li>Thomas Wedgwood's early attempts (1800s)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Timeline of Major Developments</h4>
+      <Timeline data={historyTimeline} />
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Evolution of Photographic Technology</h4>
+      <Flowchart data={photographyDevelopment} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h5 class="text-lg font-medium mb-2">Early Processes</h5>
+          <ul class="list-disc pl-6">
+            <li>Heliography (1826):
+              <ul class="list-circle pl-6 mt-1">
+                <li>First permanent photograph</li>
+                <li>8-hour exposure time</li>
+                <li>Pewter plate coated with bitumen</li>
+              </ul>
+            </li>
+            <li>Daguerreotype (1839):
+              <ul class="list-circle pl-6 mt-1">
+                <li>Silver-plated copper sheets</li>
+                <li>Highly detailed images</li>
+                <li>Each image unique</li>
+              </ul>
+            </li>
+            <li>Calotype (1841):
+              <ul class="list-circle pl-6 mt-1">
+                <li>Paper-based negative process</li>
+                <li>Multiple prints possible</li>
+                <li>Less detail than daguerreotypes</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-lg font-medium mb-2">Film Era</h5>
+          <ul class="list-disc pl-6">
+            <li>Dry Plate Process (1871):
+              <ul class="list-circle pl-6 mt-1">
+                <li>Gelatin-based emulsion</li>
+                <li>Could be stored for later use</li>
+                <li>Faster exposure times</li>
+              </ul>
+            </li>
+            <li>Roll Film (1885):
+              <ul class="list-circle pl-6 mt-1">
+                <li>George Eastman's invention</li>
+                <li>Made photography accessible</li>
+                <li>Led to motion pictures</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-lg font-medium mb-2">Digital Revolution</h5>
+          <ul class="list-disc pl-6">
+            <li>Early Digital Cameras:
+              <ul class="list-circle pl-6 mt-1">
+                <li>First digital camera by Kodak (1975)</li>
+                <li>0.01 megapixel resolution</li>
+                <li>23 seconds to record image</li>
+              </ul>
+            </li>
+            <li>Modern Digital Photography:
+              <ul class="list-circle pl-6 mt-1">
+                <li>High-resolution sensors</li>
+                <li>Advanced processing capabilities</li>
+                <li>Instant image review</li>
+                <li>Computational photography</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-semibold mb-4">Impact on Society</h4>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Documentation and Preservation:
+          <ul class="list-circle pl-6 mt-1">
+            <li>Historical records</li>
+            <li>Family memories</li>
+            <li>Scientific documentation</li>
+          </ul>
+        </li>
+        <li>Art and Expression:
+          <ul class="list-circle pl-6 mt-1">
+            <li>New form of artistic expression</li>
+            <li>Influence on painting and other arts</li>
+            <li>Development of unique photographic styles</li>
+          </ul>
+        </li>
+        <li>Communication and Media:
+          <ul class="list-circle pl-6 mt-1">
+            <li>Photojournalism</li>
+            <li>Advertising</li>
+            <li>Social media and digital sharing</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ContentSection>

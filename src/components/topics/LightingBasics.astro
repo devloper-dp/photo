@@ -1,0 +1,50 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const lightingSetups = {
+  nodes: [
+    { id: "A", label: "Lighting Setups" },
+    { id: "B", label: "Three-Point" },
+    { id: "C", label: "Rembrandt" },
+    { id: "D", label: "Butterfly" },
+    { id: "E", label: "Split" },
+    { id: "F", label: "Loop" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Lighting Fundamentals">
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">Classic Lighting Patterns</h3>
+    <Flowchart data={lightingSetups} />
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Light Qualities</h3>
+      <ul class="list-disc pl-6">
+        <li>Hard Light: Sharp shadows, high contrast</li>
+        <li>Soft Light: Diffused shadows, lower contrast</li>
+        <li>Specular Light: Reflective highlights</li>
+        <li>Diffused Light: Even spread, minimal shadows</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Light Positioning</h3>
+      <ul class="list-disc pl-6">
+        <li>Key Light: Main light source</li>
+        <li>Fill Light: Reduces shadows</li>
+        <li>Back Light: Separation from background</li>
+        <li>Hair Light: Highlights subject's hair</li>
+      </ul>
+    </div>
+  </div>
+</ContentSection>

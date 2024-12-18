@@ -1,0 +1,123 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const cameraTypes = {
+  nodes: [
+    { id: "A", label: "Camera Types" },
+    { id: "B", label: "DSLR" },
+    { id: "C", label: "Mirrorless" },
+    { id: "D", label: "Point & Shoot" },
+    { id: "E", label: "Medium Format" },
+    { id: "F", label: "Smartphone" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+
+const cameraParts = {
+  nodes: [
+    { id: "A", label: "Camera Body" },
+    { id: "B", label: "Lens Mount" },
+    { id: "C", label: "Viewfinder" },
+    { id: "D", label: "Image Sensor" },
+    { id: "E", label: "Memory Card" },
+    { id: "F", label: "LCD Screen" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Camera Fundamentals">
+  <div class="space-y-8">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Types of Cameras</h3>
+      <Flowchart data={cameraTypes} />
+      
+      <div class="mt-4 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">DSLR (Digital Single-Lens Reflex)</h4>
+          <ul class="list-disc pl-6">
+            <li>Uses mirror mechanism to direct light to optical viewfinder</li>
+            <li>Excellent image quality and versatility</li>
+            <li>Wide range of interchangeable lenses</li>
+            <li>Professional-grade controls and customization</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Mirrorless Cameras</h4>
+          <ul class="list-disc pl-6">
+            <li>Compact design without mirror mechanism</li>
+            <li>Electronic viewfinder with real-time preview</li>
+            <li>Fast autofocus and shooting speeds</li>
+            <li>Growing ecosystem of lenses</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Point & Shoot</h4>
+          <ul class="list-disc pl-6">
+            <li>Compact and portable</li>
+            <li>Automatic settings for easy use</li>
+            <li>Fixed lens design</li>
+            <li>Affordable option for beginners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Camera Parts and Functions</h3>
+      <Flowchart data={cameraParts} />
+      
+      <div class="mt-4 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Essential Components</h4>
+          <ul class="list-disc pl-6">
+            <li><strong>Body:</strong> Houses all camera components and controls</li>
+            <li><strong>Lens:</strong> Focuses light onto the sensor</li>
+            <li><strong>Sensor:</strong> Captures light and converts it to digital data</li>
+            <li><strong>Processor:</strong> Processes image data and controls camera functions</li>
+            <li><strong>Memory Card:</strong> Stores captured images</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Controls and Interfaces</h4>
+          <ul class="list-disc pl-6">
+            <li><strong>Mode Dial:</strong> Selects shooting modes (Manual, Auto, etc.)</li>
+            <li><strong>Shutter Button:</strong> Triggers image capture</li>
+            <li><strong>Command Dials:</strong> Adjust exposure settings</li>
+            <li><strong>LCD Screen:</strong> Reviews images and adjusts settings</li>
+            <li><strong>Menu System:</strong> Accesses camera configuration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Essential Camera Equipment</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Lenses:</strong> Different focal lengths for various shooting scenarios</li>
+        <li><strong>Tripod:</strong> Stabilizes camera for sharp images</li>
+        <li><strong>Filters:</strong> Modifies light entering the lens</li>
+        <li><strong>Flash Units:</strong> Provides additional lighting</li>
+        <li><strong>Memory Cards:</strong> Stores images and videos</li>
+        <li><strong>Camera Bag:</strong> Protects and transports equipment</li>
+        <li><strong>Cleaning Kit:</strong> Maintains camera and lens condition</li>
+      </ul>
+    </div>
+  </div>
+</ContentSection>

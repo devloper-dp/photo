@@ -1,0 +1,34 @@
+---
+import  from '../../.astro';
+import Flowchart from '../../Flowchart.astro';
+import MarkingScheme from '../../shared/MarkingScheme.astro';
+import { lightPropertiesData } from '../../../data/lighting';
+import { lightPropertiesMarks } from '../../../data/marking-schemes/lighting';
+
+---
+
+< title="Light Properties (10 Marks)">
+  <div class="space-y-6">
+    <Flowchart data={lightPropertiesData} />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Understanding Light</h4>
+        <MarkingScheme items={lightPropertiesMarks} />
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Color Temperature Scale</h4>
+          <ul class="list-disc pl-6">
+            <li>2700K - Warm (tungsten)</li>
+            <li>4000K - Cool white fluorescent</li>
+            <li>5500K - Daylight</li>
+            <li>6500K - Overcast sky</li>
+            <li>9000K - Blue sky</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</>

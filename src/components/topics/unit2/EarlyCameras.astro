@@ -1,0 +1,32 @@
+---
+import ContentSection from '../../ContentSection.astro';
+import Timeline from '../../Timeline.astro';
+
+const earlyTechnology = {
+  title: "Early Camera Development",
+  events: [
+    { year: "1000", event: "First Camera Obscura descriptions" },
+    { year: "1816", event: "First photograph by Nicéphore Niépce" },
+    { year: "1839", event: "Daguerreotype process invented" },
+    { year: "1851", event: "Collodion wet plate process" },
+    { year: "1871", event: "Gelatin dry plate invented" }
+  ]
+};
+---
+
+<ContentSection title="Early Cameras and Technology (20 Marks)">
+  <div class="space-y-6">
+    <Timeline data={earlyTechnology} />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Early Development</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Camera Obscura Principles (5 marks)</li>
+          <li>First Photographic Processes (5 marks)</li>
+          <li>Technical Innovations (5 marks)</li>
+          <li>Early Portable Cameras (5 marks)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>

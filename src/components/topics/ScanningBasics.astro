@@ -1,0 +1,96 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const scannerComponents = {
+  nodes: [
+    { id: "A", label: "Scanner Components" },
+    { id: "B", label: "Light Source" },
+    { id: "C", label: "CCD/CIS Sensor" },
+    { id: "D", label: "Glass Plate" },
+    { id: "E", label: "Motor System" },
+    { id: "F", label: "Interface" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" },
+    { from: "A", to: "E" },
+    { from: "A", to: "F" }
+  ]
+};
+
+const scanningProcess = {
+  nodes: [
+    { id: "A", label: "Scanning Process" },
+    { id: "B", label: "Preview Scan" },
+    { id: "C", label: "Area Selection" },
+    { id: "D", label: "Resolution Setting" },
+    { id: "E", label: "Final Scan" },
+    { id: "F", label: "Save/Export" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "B", to: "C" },
+    { from: "C", to: "D" },
+    { from: "D", to: "E" },
+    { from: "E", to: "F" }
+  ]
+};
+---
+
+<ContentSection title="Scanning Fundamentals">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Scanner Technology</h3>
+      <Flowchart data={scannerComponents} />
+      
+      <div class="mt-6 space-y-4">
+        <div>
+          <h4 class="text-lg font-medium mb-2">Scanner Types</h4>
+          <ul class="list-disc pl-6">
+            <li>Flatbed Scanners:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Most common type</li>
+                <li>Versatile for photos and documents</li>
+                <li>Some include transparency adapters</li>
+              </ul>
+            </li>
+            <li>Film Scanners:
+              <ul class="list-circle pl-6 mt-1">
+                <li>Specialized for negatives and slides</li>
+                <li>Higher resolution capabilities</li>
+                <li>Better dynamic range</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-medium mb-2">Key Specifications</h4>
+          <ul class="list-disc pl-6">
+            <li>Resolution (DPI/PPI):
+              <ul class="list-circle pl-6 mt-1">
+                <li>300 DPI - Standard documents</li>
+                <li>600 DPI - Photo prints</li>
+                <li>2400+ DPI - Film scanning</li>
+              </ul>
+            </li>
+            <li>Bit Depth:
+              <ul class="list-circle pl-6 mt-1">
+                <li>24-bit - Standard color</li>
+                <li>48-bit - Professional color</li>
+                <li>16-bit - Grayscale</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Scanning Workflow</h3>
+      <Flowchart data={scanningProcess} />
+    </div>
+  </div>
+</ContentSection>

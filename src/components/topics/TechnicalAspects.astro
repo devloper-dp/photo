@@ -1,0 +1,52 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const exposureTriangle = {
+  nodes: [
+    { id: "A", label: "Exposure" },
+    { id: "B", label: "Aperture" },
+    { id: "C", label: "Shutter Speed" },
+    { id: "D", label: "ISO" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "A", to: "D" }
+  ]
+};
+---
+
+<ContentSection title="Technical Aspects">
+  <div class="mb-6">
+    <h3 class="text-xl font-semibold mb-2">The Exposure Triangle</h3>
+    <Flowchart data={exposureTriangle} />
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Aperture</h3>
+      <ul class="list-disc pl-6">
+        <li>Controls depth of field</li>
+        <li>Measured in f-stops</li>
+        <li>Affects light intake</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Shutter Speed</h3>
+      <ul class="list-disc pl-6">
+        <li>Controls motion blur</li>
+        <li>Measured in fractions of seconds</li>
+        <li>Affects exposure time</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-lg font-semibold mb-2">ISO</h3>
+      <ul class="list-disc pl-6">
+        <li>Controls light sensitivity</li>
+        <li>Affects image noise</li>
+        <li>Digital amplification</li>
+      </ul>
+    </div>
+  </div>
+</ContentSection>

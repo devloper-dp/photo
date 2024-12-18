@@ -1,0 +1,76 @@
+---
+import ContentSection from '../ContentSection.astro';
+import Flowchart from '../Flowchart.astro';
+
+const exposureRelationship = {
+  nodes: [
+    { id: "A", label: "Exposure Control" },
+    { id: "B", label: "Aperture" },
+    { id: "C", label: "Shutter Speed" },
+    { id: "D", label: "Creative Effects" },
+    { id: "E", label: "Technical Limits" }
+  ],
+  connections: [
+    { from: "A", to: "B" },
+    { from: "A", to: "C" },
+    { from: "B", to: "D" },
+    { from: "C", to: "D" },
+    { from: "B", to: "E" },
+    { from: "C", to: "E" }
+  ]
+};
+---
+
+<ContentSection title="Aperture and Shutter Speed">
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-4">The Exposure Partnership</h3>
+      <Flowchart data={exposureRelationship} />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium mb-2">Aperture Characteristics</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>F-stop scale:
+            <ul class="list-circle pl-6 mt-1">
+              <li>f/1.4 - Very wide, lots of light</li>
+              <li>f/2.8 - Standard wide aperture</li>
+              <li>f/5.6 - Medium aperture</li>
+              <li>f/11 - Landscape aperture</li>
+              <li>f/16 - Small aperture, less light</li>
+            </ul>
+          </li>
+          <li>Creative uses:
+            <ul class="list-circle pl-6 mt-1">
+              <li>Bokeh effects</li>
+              <li>Subject isolation</li>
+              <li>Starbursts (small apertures)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-medium mb-2">Shutter Speed Effects</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Common speeds:
+            <ul class="list-circle pl-6 mt-1">
+              <li>1/1000s - Fast action</li>
+              <li>1/250s - General purpose</li>
+              <li>1/60s - Handheld minimum</li>
+              <li>1s+ - Long exposure</li>
+            </ul>
+          </li>
+          <li>Creative applications:
+            <ul class="list-circle pl-6 mt-1">
+              <li>Motion blur</li>
+              <li>Action freezing</li>
+              <li>Light painting</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ContentSection>
